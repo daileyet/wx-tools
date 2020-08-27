@@ -7,7 +7,7 @@ import com.soecode.wxtools.bean.WxXmlOutVoiceMessage;
  * 
  * @author antgan
  */
-public final class VoiceBuilder extends BaseBuilder<VoiceBuilder, WxXmlOutVoiceMessage> {
+public final class VoiceBuilder extends BaseBuilder<WxXmlOutVoiceMessage> {
 
 	private String mediaId;
 

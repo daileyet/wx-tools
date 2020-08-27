@@ -2,20 +2,20 @@ package com.soecode.wxtools.bean.outxmlbuilder;
 
 import com.soecode.wxtools.bean.WxXmlOutMessage;
 
-public abstract class BaseBuilder<BuilderType, ValueType> {
+public abstract class BaseBuilder<ValueType> {
 
 	protected String toUserName;
 
 	protected String fromUserName;
 
-	public BuilderType toUser(String touser) {
+	public BaseBuilder<ValueType> toUser(String touser) {
 		this.toUserName = touser;
-		return (BuilderType) this;
+		return this;
 	}
 
-	public BuilderType fromUser(String fromusername) {
+	public BaseBuilder<ValueType> fromUser(String fromusername) {
 		this.fromUserName = fromusername;
-		return (BuilderType) this;
+		return this;
 	}
 
 	public abstract ValueType build();

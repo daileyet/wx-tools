@@ -8,7 +8,6 @@ import java.util.List;
 import org.apache.commons.io.IOUtils;
 
 import com.soecode.wxtools.api.WxConfig;
-import com.soecode.wxtools.api.WxConsts;
 import com.soecode.wxtools.exception.AesException;
 import com.soecode.wxtools.util.crypto.WXBizMsgCrypt;
 import com.soecode.wxtools.util.xml.XStreamCDataConverter;

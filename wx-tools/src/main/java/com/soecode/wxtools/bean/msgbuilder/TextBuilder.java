@@ -13,7 +13,7 @@ import com.soecode.wxtools.bean.WxMessage;
  * @author antgan
  *
  */
-public final class TextBuilder extends BaseBuilder<TextBuilder> {
+public final class TextBuilder extends BaseBuilder{
 	private String content;
 
 	public TextBuilder() {

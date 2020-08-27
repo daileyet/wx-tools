@@ -20,7 +20,7 @@ import com.thoughtworks.xstream.XStream;
  */
 public class XStreamTransformer {
 
-	protected static final Map<Class, XStream> CLASS_2_XSTREAM_INSTANCE = configXStreamInstance();
+	protected static final Map<Class<?>, XStream> CLASS_2_XSTREAM_INSTANCE = configXStreamInstance();
 
 
 	@SuppressWarnings("unchecked")
@@ -39,8 +39,8 @@ public class XStreamTransformer {
 		return CLASS_2_XSTREAM_INSTANCE.get(clazz).toXML(object);
 	}
 
-	private static Map<Class, XStream> configXStreamInstance() {
-		Map<Class, XStream> map = new HashMap<Class, XStream>();
+	private static Map<Class<?>, XStream> configXStreamInstance() {
+		Map<Class<?>, XStream> map = new HashMap<Class<?>, XStream>();
 		map.put(WxXmlMessage.class, config_WxXmlMessage());
 		map.put(WxXmlOutNewsMessage.class, config_WxXmlOutNewsMessage());
 		map.put(WxXmlOutTextMessage.class, config_WxXmlOutTextMessage());

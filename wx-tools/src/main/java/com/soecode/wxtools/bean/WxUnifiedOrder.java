@@ -273,6 +273,7 @@ public class WxUnifiedOrder {
   }
 
 
+  @SuppressWarnings({ "rawtypes", "unchecked" })
   public String toXml() {
     return XStreamTransformer.toXml((Class) this.getClass(), this);
   }

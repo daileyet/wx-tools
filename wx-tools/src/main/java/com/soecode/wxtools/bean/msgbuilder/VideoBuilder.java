@@ -17,7 +17,7 @@ import com.soecode.wxtools.bean.WxMessage;
  * @author antgan
  *
  */
-public final class VideoBuilder extends BaseBuilder<VideoBuilder> {
+public final class VideoBuilder extends BaseBuilder {
   private String mediaId;
   private String title;
   private String description;

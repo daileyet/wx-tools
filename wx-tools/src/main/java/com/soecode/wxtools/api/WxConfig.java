@@ -8,7 +8,7 @@ import com.soecode.wxtools.bean.WxAccessToken;
 import com.soecode.wxtools.exception.WxErrorException;
 import com.soecode.wxtools.util.StringUtils;
 
-public class WxConfig {
+public final class WxConfig {
 	private static final String configFile = "/wx.properties";
 	private static WxConfig config = null;
 
@@ -24,7 +24,7 @@ public class WxConfig {
 	private volatile String jsapiTicket;
 	private volatile long jsapiTicketExpiresTime;
 	
-	public WxConfig() {
+	private WxConfig() {
 		Properties p = new Properties();
 		InputStream inStream = this.getClass().getResourceAsStream(configFile);
 		if(inStream == null){

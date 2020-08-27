@@ -8,7 +8,7 @@ import com.soecode.wxtools.bean.WxXmlOutVideoMessage;
  * @author antgan
  *
  */
-public final class VideoBuilder extends BaseBuilder<VideoBuilder, WxXmlOutVideoMessage> {
+public final class VideoBuilder extends BaseBuilder<WxXmlOutVideoMessage> {
 
 	private String mediaId;
 	private String title;

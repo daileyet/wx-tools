@@ -7,7 +7,7 @@ import com.soecode.wxtools.bean.WxXmlOutImageMessage;
  * 
  * @author antgan
  */
-public final class ImageBuilder extends BaseBuilder<ImageBuilder, WxXmlOutImageMessage> {
+public final class ImageBuilder extends BaseBuilder<WxXmlOutImageMessage> {
 
 	private String mediaId;
 

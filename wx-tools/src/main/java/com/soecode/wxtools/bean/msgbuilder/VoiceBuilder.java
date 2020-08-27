@@ -11,7 +11,7 @@ import com.soecode.wxtools.bean.WxMessage;
  * @author antgan
  *
  */
-public final class VoiceBuilder extends BaseBuilder<VoiceBuilder> {
+public final class VoiceBuilder extends BaseBuilder {
   private String mediaId;
 
   public VoiceBuilder() {

@@ -11,7 +11,7 @@ import com.soecode.wxtools.bean.WxXmlOutNewsMessage.Item;
  * 
  * @author antgan
  */
-public final class NewsBuilder extends BaseBuilder<NewsBuilder, WxXmlOutNewsMessage> {
+public final class NewsBuilder extends BaseBuilder<WxXmlOutNewsMessage> {
 
 	protected final List<Item> articles = new ArrayList<Item>();
 

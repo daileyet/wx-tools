@@ -1,5 +1,6 @@
 package com.soecode.wxtools.api;
 
+
 import com.soecode.wxtools.bean.KfAccount;
 import com.soecode.wxtools.bean.KfSender;
 import com.soecode.wxtools.bean.result.KfAccountListResult;
@@ -14,7 +15,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import org.apache.http.HttpHost;
 import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -76,7 +79,16 @@ public class WxService implements IService {
   protected CloseableHttpClient httpClient;
 
   public WxService() {
-    httpClient = HttpClients.createDefault();
+    HttpClientBuilder builder= HttpClients.custom();
+    String proxyEnv = System.getProperty("http_proxy");
+    if(proxyEnv!=null && proxyEnv.lastIndexOf(":")!=-1) {
+    	int portIndex = proxyEnv.lastIndexOf(":");
+    	String proxyAddr = proxyEnv.substring(0, portIndex);
+    	String proxyPort = proxyEnv.substring(portIndex+1);
+    	HttpHost proxy = new HttpHost(proxyAddr.trim(), Integer.valueOf(proxyPort.trim()));
+    	builder.setProxy(proxy);
+    }
+    httpClient= builder.build();
   }
 
   @Override
@@ -240,7 +252,7 @@ public class WxService implements IService {
     String url = WxConsts.URL_UPLOAD_MATERIAL_MEDIA.replace("ACCESS_TOKEN", getAccessToken())
         .replace("TYPE",
             mediaType);
-    // 如果是视频素材，添加视频描述对象
+    // å¦‚æžœæ˜¯è§†é¢‘ç´ æ��ï¼Œæ·»åŠ è§†é¢‘æ��è¿°å¯¹è±¡
     if (WxConsts.MEDIA_VIDEO.equals(mediaType)) {
       result = execute(new MediaUploadRequestExecutor(introduction), url, file);
     } else {
@@ -564,7 +576,6 @@ public class WxService implements IService {
     WxUserListResult result = null;
     if(StringUtils.isEmpty(nextOpenId)) nextOpenId = "";
     String url = WxConsts.URL_BATCH_GET_USERS_FROM_BLACK_LISE.replace("ACCESS_TOKEN", getAccessToken());
-    ObjectMapper mapper = new ObjectMapper();
     try {
       String json = "{\"begin_openid\":" + nextOpenId + "\"}";
       String postResult = post(url, json);
@@ -821,7 +832,7 @@ public class WxService implements IService {
 
     UnifiedOrderResult result = UnifiedOrderResult.fromXml(postResult);
 
-    //赋值
+    //èµ‹å€¼
     ivp.setAppId(result.getAppid());
     ivp.setNonceStr(result.getNonceStr());
     ivp.setPaySign(result.getSign());
@@ -829,7 +840,7 @@ public class WxService implements IService {
     ivp.setSignType("MD5");
     ivp.setTimeStamp(DateUtil.getTimestamp());
 
-    //拼接map
+    //æ‹¼æŽ¥map
     Map<String, String> map = new HashMap<>();
     map.put("appId", ivp.getAppId());
     map.put("timeStamp", ivp.getTimeStamp());

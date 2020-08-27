@@ -64,6 +64,7 @@ public abstract class WxXmlOutMessage {
 		this.msgType = msgType;
 	}
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public String toXml() {
 		return XStreamTransformer.toXml((Class) this.getClass(), this);
 	}

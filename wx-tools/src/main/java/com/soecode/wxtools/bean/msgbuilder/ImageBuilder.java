@@ -12,7 +12,7 @@ import com.soecode.wxtools.bean.WxMessage;
  * @author antgan
  *
  */
-public final class ImageBuilder extends BaseBuilder<ImageBuilder> {
+public final class ImageBuilder extends BaseBuilder {
   private String mediaId;
 
   public ImageBuilder() {

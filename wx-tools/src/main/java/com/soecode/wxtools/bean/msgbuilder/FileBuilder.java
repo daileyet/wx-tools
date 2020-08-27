@@ -13,7 +13,7 @@ import com.soecode.wxtools.bean.WxMessage;
  * @author antgan
  *
  */
-public final class FileBuilder extends BaseBuilder<FileBuilder> {
+public final class FileBuilder extends BaseBuilder {
 	private String mediaId;
 
 	public FileBuilder() {

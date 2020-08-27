@@ -17,7 +17,7 @@ import com.soecode.wxtools.bean.WxMessage;
  * @author antgan
  *
  */
-public final class NewsBuilder extends BaseBuilder<NewsBuilder> {
+public final class NewsBuilder extends BaseBuilder {
 
 	private List<WxMessage.WxArticle> articles = new ArrayList<WxMessage.WxArticle>();
 

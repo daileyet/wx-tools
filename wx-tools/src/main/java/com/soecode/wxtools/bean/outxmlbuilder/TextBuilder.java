@@ -8,7 +8,7 @@ import com.soecode.wxtools.bean.WxXmlOutTextMessage;
  * @author antgan
  *
  */
-public final class TextBuilder extends BaseBuilder<TextBuilder, WxXmlOutTextMessage> {
+public final class TextBuilder extends BaseBuilder<WxXmlOutTextMessage> {
 	private String content;
 
 	public TextBuilder content(String content) {

@@ -3,7 +3,7 @@ package com.soecode.wxtools.bean.msgbuilder;
 import com.soecode.wxtools.api.WxConsts;
 import com.soecode.wxtools.bean.WxMessage;
 
-public class BaseBuilder<T> {
+public class BaseBuilder {
 	protected String msgType;
 	protected String agentId;
 	protected String toUser;
@@ -11,29 +11,29 @@ public class BaseBuilder<T> {
 	protected String toTag;
 	protected String safe;
 
-	public T agentId(String agentId) {
+	public BaseBuilder agentId(String agentId) {
 		this.agentId = agentId;
-		return (T) this;
+		return this;
 	}
 
-	public T toUser(String toUser) {
+	public BaseBuilder toUser(String toUser) {
 		this.toUser = toUser;
-		return (T) this;
+		return this;
 	}
 
-	public T toParty(String toParty) {
+	public BaseBuilder toParty(String toParty) {
 		this.toParty = toParty;
-		return (T) this;
+		return this;
 	}
 
-	public T toTag(String toTag) {
+	public BaseBuilder toTag(String toTag) {
 		this.toTag = toTag;
-		return (T) this;
+		return this;
 	}
 
-	public T safe(String safe) {
+	public BaseBuilder safe(String safe) {
 		this.safe = safe;
-		return (T) this;
+		return this;
 	}
 
 	public WxMessage build() {

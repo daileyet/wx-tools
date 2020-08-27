@@ -8,7 +8,7 @@ import com.soecode.wxtools.bean.WxXmlOutMusicMessage;
  * @author antgan
  *
  */
-public final class MusicBuilder extends BaseBuilder<MusicBuilder, WxXmlOutMusicMessage> {
+public final class MusicBuilder extends BaseBuilder<WxXmlOutMusicMessage> {
 	private String title;
 	private String description;
 	private String musicUrl;
